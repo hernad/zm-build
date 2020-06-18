@@ -2383,8 +2383,8 @@ getInstallPackages() {
     else
       if [ $i = "zimbra-archiving" ]; then
         askInstallPkgYN "Install $i" "yes" "N" "N"
-      elif [ $i = "zimbra-convertd" ]; then
-        askInstallPkgYN "Install $i" "no" "Y" "N"
+      #elif [ $i = "zimbra-convertd" ]; then
+      #  askInstallPkgYN "Install $i" "no" "Y" "N"
       elif [ $i = "zimbra-chat" ]; then
 	if [ $STORE_SELECTED = "yes" ]; then
           askInstallPkgYN "Install $i" "yes" "Y" "N"
@@ -2467,10 +2467,10 @@ getInstallPackages() {
         INSTALL_PACKAGES="$INSTALL_PACKAGES zimbra-apache"
       fi
 
-      if [ $i = "zimbra-convertd" -a $APACHE_SELECTED = "no" ]; then
-        APACHE_SELECTED="yes"
-        INSTALL_PACKAGES="$INSTALL_PACKAGES zimbra-apache"
-      fi
+      #if [ $i = "zimbra-convertd" -a $APACHE_SELECTED = "no" ]; then
+      #  APACHE_SELECTED="yes"
+      #  INSTALL_PACKAGES="$INSTALL_PACKAGES zimbra-apache"
+      #fi
 
       INSTALL_PACKAGES="$INSTALL_PACKAGES $i"
     fi
