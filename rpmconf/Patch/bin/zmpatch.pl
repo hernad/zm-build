@@ -524,7 +524,7 @@ sub getInstalledVersion() {
 }
 
 sub getInstalledType() {
-  return ((-f "/opt/zimbra/bin/zmbackupquery") ? "NETWORK" : "FOSS");
+  return "FOSS";
 }
 
 sub getReleaseString($) {
