@@ -6456,22 +6456,22 @@ sub removeNetworkZimlets {
     return 1;
   } else {
     detail("ldap bind done for $ldap_dn");
-    progress("Checking for network zimlets in LDAP...");
-    $result = $ldap->search(base => $ldap_base, scope => 'one', filter => "(|(cn=com_zimbra_backuprestore)(cn=com_zimbra_domainadmin)(cn=com_zimbra_mobilesync)(cn=com_zimbra_hsm)(cn=com_zimbra_convertd)(cn=com_zimbra_license)(cn=zimbra_xmbxsearch)(cn=com_zimbra_xmbxsearch)(cn=com_zimbra_smime)(cn=com_zimbra_smime_cert_admin)(cn=com_zimbra_two_factor_auth))", attrs => ['cn']);
-    progress (($result->code()) ? "failed.\n" : "done.\n");
-    return $result if ($result->code());
-
-    detail("Processing ldap search results");
-    progress("Removing network zimlets...\n");
-    foreach my $entry ($result->all_entries) {
-      my $zimlet = $entry->get_value('cn');
-      if ( $zimlet ne "" ) {
-        progress("\tRemoving $zimlet...");
-        my $rc = runAsZimbra("/opt/zimbra/bin/zmzimletctl -l undeploy $zimlet");
-        progress (($rc == 0) ? "done.\n" : "failed. This may impact system functionality.\n");
-      }
-    }
-    progress("Finished removing network zimlets.\n");
+    #progress("Checking for network zimlets in LDAP...");
+    #$result = $ldap->search(base => $ldap_base, scope => 'one', filter => "(|(cn=com_zimbra_backuprestore)(cn=com_zimbra_domainadmin)(cn=com_zimbra_mobilesync)(cn=com_zimbra_hsm)(cn=com_zimbra_convertd)(cn=com_zimbra_license)(cn=zimbra_xmbxsearch)(cn=com_zimbra_xmbxsearch)(cn=com_zimbra_smime)(cn=com_zimbra_smime_cert_admin)(cn=com_zimbra_two_factor_auth))", attrs => ['cn']);
+    #progress (($result->code()) ? "failed.\n" : "done.\n");
+    #return $result if ($result->code());
+    #
+    #detail("Processing ldap search results");
+    #progress("Removing network zimlets...\n");
+    #foreach my $entry ($result->all_entries) {
+    #  my $zimlet = $entry->get_value('cn');
+    #  if ( $zimlet ne "" ) {
+    #    progress("\tRemoving $zimlet...");
+    #    my $rc = runAsZimbra("/opt/zimbra/bin/zmzimletctl -l undeploy $zimlet");
+    #    progress (($rc == 0) ? "done.\n" : "failed. This may impact system functionality.\n");
+    #  }
+    #}
+    #progress("Finished removing network zimlets.\n");
   }
   $result = $ldap->unbind;
   return 0;

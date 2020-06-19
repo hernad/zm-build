@@ -210,29 +210,29 @@ main()
 
     cp -f ${repoDir}/zm-zimlets/build/dist/zimlets/*.zip ${repoDir}/zm-build/${currentPackage}/opt/zimbra/zimlets
 
-    if [ "${buildType}" == "NETWORK" ]
-    then
-      echo -e "\tCopy zimlets-network files of /opt/zimbra/" >> ${buildLogFile}
-      mkdir -p ${repoDir}/zm-build/${currentPackage}/opt/zimbra/zimlets-network
-      adminZimlets=( "zm-license-admin-zimlet" \
-                     "zm-backup-restore-admin-zimlet" \
-                     "zm-delegated-admin-zimlet" \
-                     "zm-smime-cert-admin-zimlet" \
-                     "zm-2fa-admin-zimlet" \
-                     "zm-ucconfig-admin-zimlet" \
-                     "zm-securemail-zimlet" \
-                     "zm-smime-applet" )
-      for i in "${adminZimlets[@]}"
-      do
-         cp ${repoDir}/${i}/build/zimlet/*.zip ${repoDir}/zm-build/${currentPackage}/opt/zimbra/zimlets-network
-      done
-
-      adminUcZimlets=( "cisco" "mitel" "voiceprefs" )
-      for i in "${adminUcZimlets[@]}"
-      do
-         cp ${repoDir}/zm-uc-admin-zimlets/${i}/build/zimlet/*.zip ${repoDir}/zm-build/${currentPackage}/opt/zimbra/zimlets-network
-      done
-    fi
+    #if [ "${buildType}" == "NETWORK" ]
+    #then
+    #  echo -e "\tCopy zimlets-network files of /opt/zimbra/" >> ${buildLogFile}
+    #  mkdir -p ${repoDir}/zm-build/${currentPackage}/opt/zimbra/zimlets-network
+    #  adminZimlets=( "zm-license-admin-zimlet" \
+    #                 "zm-backup-restore-admin-zimlet" \
+    #                 "zm-delegated-admin-zimlet" \
+    #                 "zm-smime-cert-admin-zimlet" \
+    #                 "zm-2fa-admin-zimlet" \
+    #                 "zm-ucconfig-admin-zimlet" \
+    #                 "zm-securemail-zimlet" \
+    #                 "zm-smime-applet" )
+    #  for i in "${adminZimlets[@]}"
+    #  do
+    #     cp ${repoDir}/${i}/build/zimlet/*.zip ${repoDir}/zm-build/${currentPackage}/opt/zimbra/zimlets-network
+    #  done
+#
+    #  adminUcZimlets=( "cisco" "mitel" "voiceprefs" )
+    #  for i in "${adminUcZimlets[@]}"
+    #  do
+    #     cp ${repoDir}/zm-uc-admin-zimlets/${i}/build/zimlet/*.zip ${repoDir}/zm-build/${currentPackage}/opt/zimbra/zimlets-network
+    #  done
+    #fi
 
     echo "\t\t***** Building jetty/common/ *****" >> ${buildLogFile}
     mkdir -p ${repoDir}/zm-build/${currentPackage}/opt/zimbra/jetty_base/common/endorsed

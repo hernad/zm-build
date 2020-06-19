@@ -189,9 +189,9 @@ if [ x$UNINSTALL = "xyes" ]; then
 	exit 1
 fi
 
-displayLicense
+#displayLicense
 
-displayThirdPartyLicenses
+#displayThirdPartyLicenses
 
 checkUser root
 
@@ -294,24 +294,24 @@ if [ $UPGRADE = "yes" ]; then
   #restoreZimlets
 fi
 
-if [ "x$LICENSE" != "x" ] && [ -f "$LICENSE" ]; then
-  echo "Installing /opt/zimbra/conf/ZCSLicense.xml"
-  if [ ! -d "/opt/zimbra/conf" ]; then
-    mkdir -p /opt/zimbra/conf
-  fi
-  cp -f $LICENSE /opt/zimbra/conf/ZCSLicense.xml
-  chown zimbra:zimbra /opt/zimbra/conf/ZCSLicense.xml
-  chmod 644 /opt/zimbra/conf/ZCSLicense.xml
-fi
-if [ "x$ACTIVATION" != "x" ] && [ -f "$ACTIVATION" ]; then
-  echo "Installing /opt/zimbra/conf/ZCSLicense.xml"
-  if [ ! -d "/opt/zimbra/conf" ]; then
-    mkdir -p /opt/zimbra/conf
-  fi
-  cp -f $ACTIVATION /opt/zimbra/conf/ZCSLicense-activated.xml
-  chown zimbra:zimbra /opt/zimbra/conf/ZCSLicense-activated.xml
-  chmod 644 /opt/zimbra/conf/ZCSLicense-activated.xml
-fi
+#if [ "x$LICENSE" != "x" ] && [ -f "$LICENSE" ]; then
+#  echo "Installing /opt/zimbra/conf/ZCSLicense.xml"
+#  if [ ! -d "/opt/zimbra/conf" ]; then
+#    mkdir -p /opt/zimbra/conf
+#  fi
+#  cp -f $LICENSE /opt/zimbra/conf/ZCSLicense.xml
+#  chown zimbra:zimbra /opt/zimbra/conf/ZCSLicense.xml
+#  chmod 644 /opt/zimbra/conf/ZCSLicense.xml
+#fi
+#if [ "x$ACTIVATION" != "x" ] && [ -f "$ACTIVATION" ]; then
+#  echo "Installing /opt/zimbra/conf/ZCSLicense.xml"
+#  if [ ! -d "/opt/zimbra/conf" ]; then
+#    mkdir -p /opt/zimbra/conf
+#  fi
+#  cp -f $ACTIVATION /opt/zimbra/conf/ZCSLicense-activated.xml
+#  chown zimbra:zimbra /opt/zimbra/conf/ZCSLicense-activated.xml
+#  chmod 644 /opt/zimbra/conf/ZCSLicense-activated.xml
+#fi
 
 
 if [ $SOFTWAREONLY = "yes" ]; then

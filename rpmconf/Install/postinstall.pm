@@ -40,22 +40,22 @@ sub configure {
 }
 
 
-sub notifyZimbra {
-  if (!defined ($main::options{c}) && 1) {
-    if (main::askYN("\nYou have the option of notifying Zimbra of your installation.\nThis helps us to track the uptake of the Zimbra Collaboration Server.\nThe only information that will be transmitted is:\n\tThe VERSION of zcs installed (${main::curVersion}_${main::platform})\n\tThe ADMIN EMAIL ADDRESS created ($main::config{CREATEADMIN})\n\nNotify Zimbra of your installation?", "Yes") eq "yes") {
-      if (open NOTIFY, "/opt/zimbra/libexec/zmnotifyinstall ${main::curVersion}_${main::platform} $main::config{CREATEADMIN} |") {
-        while (<NOTIFY>) {
-          main::progress ("$_");
-        }
-        close NOTIFY;
-        #main::progress ("Notification complete!\n");
-      } else {
-        #main::progress ("ERROR: Notification failed!\n\n");
-      }
-    } else {
-    main::progress ("Notification skipped\n");
-    }
-  }
-}
+#sub notifyZimbra {
+#  if (!defined ($main::options{c}) && 1) {
+#    if (main::askYN("\nYou have the option of notifying Zimbra of your installation.\nThis helps us to track the uptake of the Zimbra Collaboration Server.\nThe only information that will be transmitted is:\n\tThe VERSION of zcs installed (${main::curVersion}_${main::platform})\n\tThe ADMIN EMAIL ADDRESS created ($main::config{CREATEADMIN})\n\nNotify Zimbra of your installation?", "Yes") eq "yes") {
+#      if (open NOTIFY, "/opt/zimbra/libexec/zmnotifyinstall ${main::curVersion}_${main::platform} $main::config{CREATEADMIN} |") {
+#        while (<NOTIFY>) {
+#          main::progress ("$_");
+#        }
+#        close NOTIFY;
+#        #main::progress ("Notification complete!\n");
+#      } else {
+#        #main::progress ("ERROR: Notification failed!\n\n");
+#      }
+#    } else {
+#    main::progress ("Notification skipped\n");
+#    }
+#  }
+#}
 
 1
