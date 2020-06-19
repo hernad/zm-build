@@ -32,8 +32,7 @@
    { name => "zm-launcher",                          },
    { name => "zm-ldap-utilities",                    },
    { name => "zm-ldap-utils-store",                  },
-   { name => "zm-licenses",                          },
-   { name => "zm-mailbox",                           },
+   { name => "zm-mailbox",  branch => "patches"      },
    { name => "zm-migration-tools",                   },
    { name => "zm-mta",                               },
    { name => "zm-nginx-conf",                        },
@@ -56,7 +55,7 @@
    { name => "zm-webclient-portal-example",          },
    { name => "zm-zcs",                               },
    { name => "zm-zcs-lib",                           },
-   { name => "zm-zimlets",                           },
+   { name => "zm-zimlets",  branch => "patches"      },
    { name => "zm-oauth-social",                      },
    { name => "zm-gql",		                     },
 );
