@@ -553,9 +553,6 @@ main()
    Copy ${repoDir}/zm-ldap-utilities/src/libexec/zmslapindex                                        ${repoDir}/zm-build/${currentPackage}/opt/zimbra/libexec/zmslapindex
    Copy ${repoDir}/zm-ldap-utilities/src/libexec/zmstat-ldap                                        ${repoDir}/zm-build/${currentPackage}/opt/zimbra/libexec/zmstat-ldap
 
-   Copy ${repoDir}/zm-licenses/zimbra/ypl-full.txt                                                  ${repoDir}/zm-build/${currentPackage}/opt/zimbra/docs/YPL.txt
-   Copy ${repoDir}/zm-licenses/zimbra/zpl-full.txt                                                  ${repoDir}/zm-build/${currentPackage}/opt/zimbra/docs/ZPL.txt
-
    Copy ${repoDir}/zm-migration-tools/ReadMe.txt                                                    ${repoDir}/zm-build/${currentPackage}/opt/zimbra/docs/zmztozmig.txt
 
    Copy ${repoDir}/zm-mta/cbpolicyd.conf.in                                                         ${repoDir}/zm-build/${currentPackage}/opt/zimbra/conf/cbpolicyd.conf.in

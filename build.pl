@@ -1067,17 +1067,38 @@ sub Die($;$$)
 
 sub main()
 {
+
+   my $deploy_only = 0;
+
+   ##print("ARGV cnt: $#ARGV\n");
+
+   #if ($#ARGV < 1) {
+   #   print "usage: ./buld.pl --task=DEPLOY|ALL\n\nerror!";
+   #   exit(1);
+   #}
+   #
+   #my $arg_1 = shift(@ARGV);
+
+   #if ($arg_1 eq "--task=DEPLOY") {
+   #      print("=================== DEPLOY ONLY =================");
+   #      $deploy_only = 1;
+   #}
+
    InitGlobalBuildVars();
 
    my $all_repos = LoadRepos();
 
    Prepare();
 
-   Checkout($all_repos);
+   if (!$deploy_only) {
+      Checkout($all_repos);
+   }
 
    if ( !$CFG{STOP_AFTER_CHECKOUT} )
    {
-      Build($all_repos);
+      if ( !$deploy_only ) {
+         Build($all_repos);
+      }
 
       Deploy();
    }
