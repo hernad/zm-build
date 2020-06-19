@@ -6,7 +6,7 @@
    { name => "nekohtml-1.9.13",                      },
    { name => "java-html-sanitizer-release-20190610.1",remote => "zm-ow",},
    { name => "antisamy", remote => "zm-ow",          },
-   { name => "zm-admin-console",                     },
+   { name => "zm-admin-console", branch => "patches"     },
    { name => "zm-admin-help-common",                 },
    { name => "zm-ajax",                              },
    { name => "zm-admin-ajax",                        },
