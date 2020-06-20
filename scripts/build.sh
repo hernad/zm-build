@@ -20,7 +20,9 @@ sudo chown build -R zimbra
 #DEPLOY_TASK=--task=ALL
 #DEPLOY_TASK=--task=DEPLOY
 
-BUILD_NO=32020
+[ -n "$BUILD_NO" ] || BUILD_NO=32020
+
+echo BUILD_NO=${BUILD_NO}
 
 ./build.pl $DEPLOY_TASK --build-no=$BUILD_NO --build-ts=`date +'%Y%m%d%H%M%S'` \
   --build-release=DEVETKA --build-release-no=9.0.0 \
